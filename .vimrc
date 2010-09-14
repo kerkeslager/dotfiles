@@ -1,10 +1,14 @@
 " Don't imitate vi.
 set nocompatible
 
-" Ignore certain file extensions when tab-completing.
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
+" Make tab-completion work more like bash.
+set wildmenu
+set wildmode=list:full
 
-" set filetype stuff to on
+" Ignore certain file extensions when tab-completing.
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.exe
+
+" Set filetype stuff to on.
 filetype on
 filetype plugin on
 filetype indent on
@@ -31,10 +35,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
-"Highlight bad spacing
+"Highlight bad spacing.
 highlight BadSpacing term=standout ctermbg=cyan
 augroup Spacing
     autocmd!
@@ -61,7 +65,7 @@ set splitbelow splitright
 " Line wrapping off
 set nowrap
 
-" Enlarge history and undo/redo buffers
+" Enlarge history and undo/redo buffers.
 set history=1000
 set undolevels=1000
 
