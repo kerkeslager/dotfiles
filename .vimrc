@@ -18,6 +18,11 @@ filetype indent on
 "     autocmd filetype python set expandtab
 " endif
 
+" Allow folding.
+set foldenable
+set foldmethod=syntax
+set foldlevelstart=99
+
 " Show line numbers.
 set number
 set numberwidth=4
@@ -95,6 +100,15 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+" Map open and close items in insert mode.
+" Keep this commented out until I can get it working better.
+"inoremap { {<CR>}<Esc>O
+"inoremap [ []<Esc>i
+"inoremap ( ()<Esc>i
+"inoremap } <Esc>/}<CR>o
+"inoremap ] <Esc>/]<CR>a
+"inoremap ) <Esc>/)<CR>a
 
 " Automatically reload the .vimrc when changes are made to it
 au! BufWritePost .vimrc source %
