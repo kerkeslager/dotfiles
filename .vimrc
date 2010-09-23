@@ -93,4 +93,7 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+" Automatically reload the .vimrc when changes are made to it
+au! BufWritePost .vimrc source %
+
 
