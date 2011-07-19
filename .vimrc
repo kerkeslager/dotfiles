@@ -25,6 +25,9 @@ set numberwidth=4
 " Scroll five lines ahead of cursor.
 set scrolloff=5
 
+" Turn off error bells and visual bell
+set noeb vb t_vb=
+
 " Set up autoindentation.
 set smartindent
 filetype indent on
@@ -95,5 +98,3 @@ noremap! <Right> <Esc>
 
 " Automatically reload the .vimrc when changes are made to it
 au! BufWritePost .vimrc source %
-
-
