@@ -55,6 +55,12 @@ if [ -d $HOME/bin ]; then
 	export PATH
 fi
 
+# Put /usr/local/bin (where homebrew installs stuff) before /usr/bin on the
+# path. This means that if a program exists at both locations, calls to that
+# program will use the homebrew version rather than the system version.
+PATH="/usr/local/bin:$PATH"
+export PATH
+
 # Run a machine-specific bashrc (if it exists).
 if [ -f $HOME/.bashrc_local ]; then
 	source $HOME/.bashrc_local
