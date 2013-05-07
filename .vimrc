@@ -11,6 +11,9 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.exe
 " Set filetype stuff to on.
 filetype on
 filetype plugin on
+
+" Set up autoindentation.
+set smartindent
 filetype indent on
 
 " Example filetype-specific setting:
@@ -33,10 +36,6 @@ set scrolloff=5
 " Turn off error bells and visual bell
 set noeb vb t_vb=
 
-" Set up autoindentation.
-set smartindent
-filetype indent on
-
 " Set tabs to width 4.
 set softtabstop=4
 set tabstop=4
@@ -55,9 +54,6 @@ augroup Spacing
     " Only highlight trailing space in tab-filled formats
     autocmd FileType help,make match BadSpacing /  *$/
 augroup END
-
-" Highlight search terms.
-set hlsearch
 
 " Search as you type.
 set incsearch
@@ -100,15 +96,6 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
-
-" Map open and close items in insert mode.
-" Keep this commented out until I can get it working better.
-"inoremap { {<CR>}<Esc>O
-"inoremap [ []<Esc>i
-"inoremap ( ()<Esc>i
-"inoremap } <Esc>/}<CR>o
-"inoremap ] <Esc>/]<CR>a
-"inoremap ) <Esc>/)<CR>a
 
 " Automatically reload the .vimrc when changes are made to it
 au! BufWritePost .vimrc source %
