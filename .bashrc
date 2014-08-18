@@ -57,7 +57,7 @@ fi
 
 # Put $HOME/Library/Haskell/bin on the path. Installing cabal doesn't
 # automatically put installed packages on the path.
-if [-d $HOME/Library/Haskell/bin ]; then
+if [ -d $HOME/Library/Haskell/bin ]; then
     PATH="$HOME/Library/Haskell/bin:$PATH"
     export PATH
 fi
@@ -86,3 +86,33 @@ fi
 if [ $TERM != screen ]; then
 	screen
 fi
+
+# Gets a directory named .env if it exists in the currend directory or any of its parents
+get_env() {
+    if [ -d "$1/.env" ] ; then
+        echo "$1/.env"
+    else
+        if [ -d "$1/.." ] ; then
+            get_env "$1/.."
+        fi
+    fi
+}
+
+on_prompt() {
+    # Load a virtualenv environment if it exists in a file named .env
+    env_folder=$(get_env $(pwd))
+
+    if [ -d "$env_folder" ] ; then
+        if [[ $VIRTUAL_ENV != $env_folder ]] ; then
+            echo "Activating env '$env_folder'"
+            source "$env_folder/bin/activate"
+        fi
+    else
+        if [ -d "$VIRTUAL_ENV" ] ; then
+            deactivate
+        fi
+    fi
+}
+
+# Call on_prompt() every time the command prompt executes
+PROMPT_COMMAND=on_prompt
