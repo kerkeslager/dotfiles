@@ -55,6 +55,13 @@ if [ -d $HOME/bin ]; then
 	export PATH
 fi
 
+# Put $HOME/Library/Haskell/bin on the path. Installing cabal doesn't
+# automatically put installed packages on the path.
+if [-d $HOME/Library/Haskell/bin ]; then
+    PATH="$HOME/Library/Haskell/bin:$PATH"
+    export PATH
+fi
+
 # Put /usr/local/bin (where homebrew installs stuff) before /usr/bin on the
 # path. This means that if a program exists at both locations, calls to that
 # program will use the homebrew version rather than the system version.
