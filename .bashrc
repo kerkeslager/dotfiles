@@ -55,10 +55,10 @@ if [ -d $HOME/bin ]; then
 	export PATH
 fi
 
-# Put $HOME/Library/Haskell/bin on the path. Installing cabal doesn't
+# Put $HOME/.cabal/bin on the path. Installing cabal doesn't
 # automatically put installed packages on the path.
-if [ -d $HOME/Library/Haskell/bin ]; then
-    PATH="$HOME/Library/Haskell/bin:$PATH"
+if [ -d $HOME/.cabal/bin ]; then
+    PATH="$HOME/.cabal/bin:$PATH"
     export PATH
 fi
 
