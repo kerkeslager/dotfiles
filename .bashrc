@@ -114,6 +114,8 @@ on_prompt() {
     fi
 }
 
+set -o vi
+
 # Call on_prompt() every time the command prompt executes
 PROMPT_COMMAND=on_prompt
 
