@@ -51,11 +51,7 @@ defnonblock 5
 # ------------------------------------------------------------------------------
 # STARTUP SCREENS
 # ------------------------------------------------------------------------------
-screen -t ssh bash
 screen -t bash bash
 screen -t editor bash
-screen -t man bash
-screen -t batch bash
-screen -t other bash
-select 2
 select 1
+select 0

@@ -114,11 +114,9 @@ on_prompt() {
     fi
 }
 
+# Set vi keybindings
 set -o vi
 
 # Call on_prompt() every time the command prompt executes
 PROMPT_COMMAND=on_prompt
-
-export NVM_DIR="/Users/david/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
