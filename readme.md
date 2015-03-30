@@ -1,4 +1,4 @@
-These are my Bash configuration files. I use them on Xubuntu Linux and Mac OS X,
+These are my Bash configuration files. I use them on Trisquel Linux and Mac OS X,
 but I see no reason why they would not work on other Unix-like systems.
 
 Code is licensed under the MIT License (included in the file "license.txt")
