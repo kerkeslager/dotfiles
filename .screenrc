@@ -53,5 +53,4 @@ defnonblock 5
 # ------------------------------------------------------------------------------
 screen -t bash bash
 screen -t editor bash
-select 1
 select 0
