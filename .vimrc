@@ -37,10 +37,16 @@ set scrolloff=5
 set noeb vb t_vb=
 
 " Set tabs to width 4.
+filetype plugin indent on
+set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-set shiftwidth=4
 set expandtab
+
+" language-specific settings
+autocmd FileType html       setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
