@@ -24,4 +24,4 @@
 	whitespace = fix
 
 [alias]
-	pom = push origin master
+	log = log --oneline --graph
