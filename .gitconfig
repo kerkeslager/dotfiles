@@ -25,3 +25,6 @@
 
 [alias]
 	log = log --oneline --graph
+
+[push]
+	default = simple
