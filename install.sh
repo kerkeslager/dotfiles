@@ -1,1 +1,1 @@
-cp .bash_profile .bashrc .emacs .gemrc .gitconfig .profile .screenrc .vimrc ..
+cp -r .bash_profile .bashrc .emacs .gemrc .gitconfig .gnupg/ .profile .screenrc .vimrc ../
