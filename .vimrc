@@ -26,10 +26,6 @@ set foldenable
 set foldmethod=syntax
 set foldlevelstart=99
 
-" Show line numbers.
-set number
-set numberwidth=4
-
 " Scroll five lines ahead of cursor.
 set scrolloff=5
 
