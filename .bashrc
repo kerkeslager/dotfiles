@@ -46,6 +46,8 @@ fi
 
 alias emacs='emacs -nw'
 alias serve='python -m SimpleHTTPServer 8080'
+alias gpg='gpg2'
+alias gnupg='gnupg2'
 
 export SVN_EDITOR=vim
 
@@ -75,19 +77,6 @@ fi
 # program will use the homebrew version rather than the system version.
 PATH="/usr/local/bin:$PATH"
 export PATH
-
-# Run a machine-specific bashrc (if it exists).
-if [ -f $HOME/.bashrc_local ]; then
-	source $HOME/.bashrc_local
-fi
-
-# Install RVM if it's not installed.
-if [ ! -f $HOME/.rvm/scripts/rvm ]; then
-    bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-fi
-
-# Load RVM into shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Automatically open screen.
 # The if statement prevents it from recursing (since screen opens bash).
