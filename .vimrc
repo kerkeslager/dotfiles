@@ -32,14 +32,14 @@ set scrolloff=5
 " Turn off error bells and visual bell
 set noeb vb t_vb=
 
-" Set tabs to width 4.
+" Set tabs to width 2.
 filetype plugin indent on
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
 
-" language-specific settings
+" language-specific settings: tab width is 4 for python
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
 " Allow backspacing over everything in insert mode.
