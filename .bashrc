@@ -95,12 +95,16 @@ get_env() {
     fi
 }
 
+get_absolute_path() {
+  python3 -c "import os; print(os.path.realpath('$1'))"
+}
+
 on_prompt() {
     # Load a virtualenv environment if it exists in a file named .env
     env_folder=$(get_env $(pwd))
 
     if [ -d "$env_folder" ] ; then
-        if [[ $VIRTUAL_ENV != $env_folder ]] ; then
+      if [[ $VIRTUAL_ENV != $(get_absolute_path $env_folder) ]] ; then
             echo "Activating env '$env_folder'"
             source "$env_folder/bin/activate"
         fi
