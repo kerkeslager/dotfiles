@@ -2,3 +2,6 @@
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
+# MAC OS specific stuff
+export PATH="/usr/local/sbin:$PATH"
