@@ -84,15 +84,19 @@ if [ $TERM != screen ]; then
 	screen
 fi
 
-# Gets a directory named .env if it exists in the currend directory or any of its parents
+# Gets a directory named .env or .venv if it exists in the currend directory or any of its parents
 get_env() {
-    if [ -d "$1/.env" ] ; then
-        echo "$1/.env"
+  if [ -d "$1/.env" ] ; then
+    echo "$1/.env"
+  else
+    if [ -d "$1/.venv" ] ; then
+      echo "$1/.venv"
     else
-        if [ -d "$1/.." ] ; then
-            get_env "$1/.."
-        fi
+      if [ -d "$1/.." ] ; then
+        get_env "$1/.."
+      fi
     fi
+  fi
 }
 
 get_absolute_path() {
@@ -100,19 +104,19 @@ get_absolute_path() {
 }
 
 on_prompt() {
-    # Load a virtualenv environment if it exists in a file named .env
-    env_folder=$(get_env $(pwd))
+  # Load a virtualenv environment if it exists in a file named .env
+  env_folder=$(get_env $(pwd))
 
-    if [ -d "$env_folder" ] ; then
-      if [[ $VIRTUAL_ENV != $(get_absolute_path $env_folder) ]] ; then
-            echo "Activating env '$env_folder'"
-            source "$env_folder/bin/activate"
-        fi
-    else
-        if [ -d "$VIRTUAL_ENV" ] ; then
-            deactivate
-        fi
+  if [ -d "$env_folder" ] ; then
+    if [[ $VIRTUAL_ENV != $(get_absolute_path $env_folder) ]] ; then
+      echo "Activating env '$env_folder'"
+      source "$env_folder/bin/activate"
     fi
+  else
+    if [ -d "$VIRTUAL_ENV" ] ; then
+      deactivate
+    fi
+  fi
 }
 
 # Set vi keybindings
