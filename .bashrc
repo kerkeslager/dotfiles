@@ -78,6 +78,11 @@ fi
 PATH="/usr/local/bin:$PATH"
 export PATH
 
+# Run a machine-specific bashrc (if it exists).
+if [ -f $HOME/.bashrc_local ]; then
+	source $HOME/.bashrc_local
+fi
+
 # Automatically open screen.
 # The if statement prevents it from recursing (since screen opens bash).
 if [ $TERM != screen ]; then
