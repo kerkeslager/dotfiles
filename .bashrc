@@ -119,11 +119,11 @@ on_prompt() {
   fi
 }
 
-# Set vi keybindings
-set -o vi
-
 # Call on_prompt() every time the command prompt executes
 PROMPT_COMMAND=on_prompt
+
+# Set vi keybindings
+set -o vi
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
