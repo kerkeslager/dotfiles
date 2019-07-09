@@ -87,6 +87,11 @@ syn sync fromstart
 " Set the color scheme to desert.
 colorscheme desert
 
+" Set custom whitespace display
+set list
+set showbreak=↪\ 
+set listchars=tab:\ \ →,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+
 " Unmap the arrow keys to prevent bad habits.
 noremap  <Up> ""
 noremap! <Up> <Esc>
