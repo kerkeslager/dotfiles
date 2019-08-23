@@ -2,5 +2,5 @@ set completion-ignore-case on
 set completion-map-case on
 set editing-mode vi
 set revert-all-at-newline on
-set show-all-if-ambiguous on
+set show-all-if-unmodified on
 set skip-completed-text on
