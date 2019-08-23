@@ -1,4 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+cat /dev/null > ~/.bash_history
 
 # If not running interactively, don't do anything
 case $- in
