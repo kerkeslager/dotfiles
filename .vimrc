@@ -42,6 +42,10 @@ set expandtab
 " language-specific settings: tab width is 4 for python
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
+"allow projet-specific vimrcs
+set exrc
+set secure " Don't execute :autocmd in project-specific vimrcs unless owned by me
+
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
