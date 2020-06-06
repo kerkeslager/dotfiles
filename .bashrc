@@ -86,7 +86,7 @@ fi
 
 # Automatically open screen.
 # The if statement prevents it from recursing (since screen opens bash).
-if [ $TERM != screen ]; then
+if [ $TERM != screen ] && [ $TERM != screen.xterm-256color ] ; then
 	screen
 fi
 
