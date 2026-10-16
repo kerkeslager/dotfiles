@@ -78,3 +78,6 @@ syntax on
 filetype indent on
 " Keep indentation level from previous line:
 set autoindent
+
+" Search as you type and hilight search terms
+set is hls
